@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_website/components/intro_text.dart';
 import 'package:my_website/components/sambodhan.dart';
+import 'package:my_website/constants.dart';
 
 void main() {
   runApp(const Website());
@@ -28,10 +30,7 @@ class Website extends StatelessWidget {
         body: ListView(
           children: [
             Sambodhan(),
-            Container(
-              height: 200,
-              color: Colors.red,
-            ),
+            IntroText(),
             Container(
               height: 400,
               color: Colors.blue,

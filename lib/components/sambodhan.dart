@@ -22,7 +22,8 @@ class _SambodhanState extends State<Sambodhan> {
   }
 
   Future<int> initializeVideo() async {
-    diamondVideoController = VideoPlayerController.asset("assets/videos/diamonds.mp4");
+    diamondVideoController =
+        VideoPlayerController.asset("assets/videos/diamonds.mp4");
     await diamondVideoController.initialize();
     await diamondVideoController.setLooping(true);
     await diamondVideoController.play();
@@ -80,8 +81,10 @@ class _SambodhanState extends State<Sambodhan> {
           child: Container(
             width: screenWidth,
             child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 40.0, vertical: 80),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 40.0,
+                vertical: 80,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -94,7 +97,10 @@ class _SambodhanState extends State<Sambodhan> {
                   ),
                   AutoSizeText(
                     "Debasish Bordoloi",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 108),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 108,
+                    ),
                     maxLines: 1,
                   ),
                 ],
