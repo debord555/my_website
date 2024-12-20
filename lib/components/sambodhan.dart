@@ -12,23 +12,21 @@ class Sambodhan extends StatefulWidget {
 
 class _SambodhanState extends State<Sambodhan> {
   late VideoPlayerController diamondVideoController;
-  late Future<void> waitForInitialize;
+  late Future<int> waitForInitialize;
 
   @override
   void initState() {
     super.initState();
 
-    // Initialize the video player controller
-    diamondVideoController =
-        VideoPlayerController.asset("assets/videos/diamonds.mp4");
+    waitForInitialize = initializeVideo();
+  }
 
-    // Initialize the controller asynchronously
-    waitForInitialize = diamondVideoController.initialize().then((_) {
-      // Ensure the state is updated after initialization
-      setState(() {});
-      diamondVideoController.setLooping(true);
-      diamondVideoController.play();
-    });
+  Future<int> initializeVideo() async {
+    diamondVideoController = VideoPlayerController.asset("assets/videos/diamonds.mp4");
+    await diamondVideoController.initialize();
+    await diamondVideoController.setLooping(true);
+    await diamondVideoController.play();
+    return 0;
   }
 
   @override
@@ -48,7 +46,7 @@ class _SambodhanState extends State<Sambodhan> {
         FutureBuilder(
           future: waitForInitialize,
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasData) {
               return ClipRect(
                 // Clip the video if necessary
                 child: Container(
@@ -90,13 +88,13 @@ class _SambodhanState extends State<Sambodhan> {
                   AutoSizeText(
                     "Hi! I am",
                     style: TextStyle(
-                      fontSize: 54,
+                      fontSize: 72,
                     ),
                     maxLines: 1,
                   ),
                   AutoSizeText(
                     "Debasish Bordoloi",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 72),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 108),
                     maxLines: 1,
                   ),
                 ],
