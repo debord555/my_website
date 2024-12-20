@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:my_website/components/scroll_indicator.dart';
 import 'package:video_player/video_player.dart';
 
 class Sambodhan extends StatefulWidget {
@@ -71,21 +72,9 @@ class _SambodhanState extends State<Sambodhan> {
             }
           },
         ),
-        Center(
-          child: SizedBox(
-            height: screenHeight - appBarHeight - 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "Scroll",
-                  style: TextStyle(fontSize: 18),
-                ),
-                Icon(Icons.arrow_downward),
-              ],
-            ),
-          ),
+        ScrollIndicator(
+          screenHeight: screenHeight,
+          appBarHeight: appBarHeight,
         ),
         Positioned(
           left: 0,
@@ -93,7 +82,8 @@ class _SambodhanState extends State<Sambodhan> {
           child: Container(
             width: screenWidth,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 80),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 40.0, vertical: 80),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
