@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/components/scroll_indicator.dart';
 import 'package:video_player/video_player.dart';
 
@@ -40,7 +41,7 @@ class _SambodhanState extends State<Sambodhan> {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
-    final double appBarHeight = AppBar().preferredSize.height;
+    final double appBarHeight = 0;
 
     return Stack(
       children: [
@@ -73,7 +74,7 @@ class _SambodhanState extends State<Sambodhan> {
         ),
         ScrollIndicator(
           screenHeight: screenHeight,
-          appBarHeight: appBarHeight,
+          appBarHeight: 0,
         ),
         Positioned(
           left: 0,
@@ -90,16 +91,16 @@ class _SambodhanState extends State<Sambodhan> {
                 children: [
                   AutoSizeText(
                     "Hi! I am",
-                    style: TextStyle(
-                      fontSize: 72,
+                    style: GoogleFonts.ebGaramond(
+                      fontSize: 54,
                     ),
                     maxLines: 1,
                   ),
                   AutoSizeText(
                     "Debasish Bordoloi",
-                    style: TextStyle(
+                    style: GoogleFonts.birthstone(
                       fontWeight: FontWeight.bold,
-                      fontSize: 108,
+                      fontSize: 154,
                     ),
                     maxLines: 1,
                   ),
