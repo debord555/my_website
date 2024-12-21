@@ -30,7 +30,7 @@ class ProjectViewer extends StatelessWidget {
           GridView.count(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
-            crossAxisCount: max(1, (screenWidth / 500).toInt()),
+            crossAxisCount: max(1, (screenWidth / 450).toInt()),
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,
             children: [
@@ -40,7 +40,7 @@ class ProjectViewer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        flex: 2,
+                        flex: 1,
                         child: ClipRRect(
                           borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(12),
@@ -53,6 +53,7 @@ class ProjectViewer extends StatelessWidget {
                         ),
                       ),
                       Expanded(
+                        flex: 1,
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16.0),
                           child: Column(

@@ -22,3 +22,39 @@ final List<Map<String, dynamic>> projects = [
     "image": AssetImage("assets/images/sudoku.png"),
   }
 ];
+
+final List<Map<String, dynamic>> myTimelineStuff = [
+  {
+    "date": "Today",
+    "eventTitle": "Student at Tezpur University",
+    "eventDescription": "Pursuing Bachelor of Technology in Computer Science & Engineering. Expected to graduate in 2026.",
+    "icon": Icons.school,
+  },
+  {
+    "date": "November 2024",
+    "eventTitle": "2nd Prize - HackXetra",
+    "eventDescription": "Secured 2nd Prize at HackXetra, a hackathon conducted under TechXetra 2024, at Tezpur University.",
+    "icon": Icons.emoji_events,
+    "color": Colors.amberAccent,
+    "iconColor": Colors.black,
+  },
+  {
+    "date": "June 2022",
+    "eventTitle": "Completed Higher Secondary Education",
+    "eventDescription": "Completed Higher Secondary Education from Pragya Academy, Jorhat. Percentage scored: 94.2%",
+    "icon": Icons.school,
+  },
+  {
+    "date": "November 2021",
+    "eventTitle": "Received ARSM Diploma",
+    "eventDescription": "Was awarded the diploma of Associate of the Royal Schools of Music, by ABRSM, UK. ",
+    "icon": Icons.school,
+  },
+  {
+    "date": "June 2020",
+    "eventTitle": "Completed High School Education",
+    "eventDescription": "Completed High School Education from Don Bosco H.S.S. Baghchung, Jorhat. Percentage scored: 95.2%",
+    "icon": Icons.school,
+  },
+  
+];

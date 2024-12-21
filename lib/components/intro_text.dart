@@ -13,7 +13,7 @@ class IntroText extends StatelessWidget {
         child: SizedBox(
           width: 1000,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50.0, horizontal: 32),
+            padding: const EdgeInsets.fromLTRB(32, 40, 32, 50),
             child: Column(
               children: [
                 Text(
