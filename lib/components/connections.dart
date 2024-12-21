@@ -1,7 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_website/constants.dart';
 import 'package:my_website/misc/website_custom_icons_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Connections extends StatelessWidget {
   const Connections({super.key});
@@ -27,7 +29,9 @@ class Connections extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  launchUrl(cvLink);
+                },
                 child: Text(
                   "View CV",
                   style: TextStyle(
@@ -40,7 +44,9 @@ class Connections extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(WebsiteCustomIcons.github_square),
-                onPressed: () {},
+                onPressed: () {
+                  launchUrl(githubProfile);
+                },
                 color: Colors.white,
               ),
               SizedBox.square(
@@ -48,17 +54,19 @@ class Connections extends StatelessWidget {
               ),
               IconButton(
                 icon: Icon(WebsiteCustomIcons.linkedin),
-                onPressed: () {},
+                onPressed: () {
+                  launchUrl(linkedInProfile);
+                },
                 color: Colors.white,
               ),
-              SizedBox.square(
-                dimension: 16,
-              ),
-              IconButton(
-                icon: Icon(WebsiteCustomIcons.discord),
-                onPressed: () {},
-                color: Colors.white,
-              ),
+              // SizedBox.square(
+              //   dimension: 16,
+              // ),
+              // IconButton(
+              //   icon: Icon(WebsiteCustomIcons.discord),
+              //   onPressed: () {},
+              //   color: Colors.white,
+              // ),
             ],
           ),
           SizedBox.square(
@@ -80,7 +88,9 @@ class Connections extends StatelessWidget {
                     color: Colors.grey,
                     decoration: TextDecoration.underline,
                   ),
-                  recognizer: TapGestureRecognizer()..onTap = () {},
+                  recognizer: TapGestureRecognizer()..onTap = () {
+                    launchUrl(sourceUri);
+                  },
                 ),
                 TextSpan(
                   text: ".",

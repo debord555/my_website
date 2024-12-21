@@ -38,6 +38,7 @@ dependencies:
   auto_size_text: ^3.0.0
   google_fonts: ^6.2.1
   timelines_plus: ^1.0.4
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,7 @@ flutter:
     - assets/videos/diamonds.mp4
     - assets/images/sonata.png
     - assets/images/sudoku.png
+    - assets/images/website.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_website/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FrostedAppbar extends StatelessWidget {
   const FrostedAppbar({super.key});
@@ -41,7 +43,9 @@ class FrostedAppbar extends StatelessWidget {
                 Row(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        launchUrl(cvLink);
+                      },
                       child: Text(
                         "View CV",
                         style: TextStyle(fontWeight: FontWeight.bold),

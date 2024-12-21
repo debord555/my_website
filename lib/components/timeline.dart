@@ -49,7 +49,7 @@ class TimeLine extends StatelessWidget {
                     eventTitle: myTimelineStuff[index]["eventTitle"],
                     eventDescription: myTimelineStuff[index]
                         ["eventDescription"],
-                        alignAtEnd: true,
+                    alignAtEnd: true,
                   );
                 } else {
                   return Padding(
@@ -71,7 +71,16 @@ class TimeLine extends StatelessWidget {
                     ),
               endConnectorBuilder: (context, index) =>
                   (index == myTimelineStuff.length - 1)
-                      ? Connector.transparent()
+                      ? DecoratedLineConnector(
+                          thickness: 5,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Colors.deepPurple, Colors.transparent],
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                            ),
+                          ),
+                        )
                       : Connector.solidLine(
                           thickness: 5,
                           color: Colors.deepPurple,
