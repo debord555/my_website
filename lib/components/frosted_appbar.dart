@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/constants.dart';
@@ -11,7 +12,6 @@ class FrostedAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double screenHeight = MediaQuery.of(context).size.height;
 
     return Positioned(
       top: 0,
@@ -33,14 +33,14 @@ class FrostedAppbar extends StatelessWidget {
                     SizedBox.square(
                       dimension: 32,
                     ),
-                    Text(
+                    AutoSizeText(
                       "Debasish Bordoloi",
                       style: GoogleFonts.birthstone(
                           color: Colors.white, fontSize: 54),
                     ),
                   ],
                 ),
-                Row(
+                if (screenWidth > 500) Row(
                   children: [
                     ElevatedButton(
                       onPressed: () {

@@ -13,18 +13,26 @@ class Sambodhan extends StatefulWidget {
 
 class _SambodhanState extends State<Sambodhan> {
   late VideoPlayerController diamondVideoController;
-  late Future<int> waitForInitialize;
+  late Future<void> waitForInitialize;
 
   @override
   void initState() {
     super.initState();
 
-    waitForInitialize = initializeVideo();
+    diamondVideoController =
+        VideoPlayerController.asset("assets/videos/diamonds.mp4");
+    waitForInitialize = diamondVideoController
+        .initialize()
+        .then((_) => diamondVideoController.setLooping(true));
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      // mutes the video
+      diamondVideoController.setVolume(0); 
+      // Plays the video once the widget is build and loaded.
+      diamondVideoController.play();
+    });
   }
 
   Future<int> initializeVideo() async {
-    diamondVideoController =
-        VideoPlayerController.asset("assets/videos/diamonds.mp4");
     await diamondVideoController.initialize();
     await diamondVideoController.setLooping(true);
     await diamondVideoController.play();
@@ -34,6 +42,7 @@ class _SambodhanState extends State<Sambodhan> {
   @override
   void dispose() {
     diamondVideoController.dispose();
+    //print("Video controller disposed");
     super.dispose();
   }
 
@@ -48,7 +57,9 @@ class _SambodhanState extends State<Sambodhan> {
         FutureBuilder(
           future: waitForInitialize,
           builder: (context, snapshot) {
-            if (snapshot.hasData) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              //print("Building video player");
+              
               return ClipRect(
                 // Clip the video if necessary
                 child: Container(
@@ -65,9 +76,12 @@ class _SambodhanState extends State<Sambodhan> {
                 ),
               );
             } else {
-              return Container(
+              return SizedBox(
                 height: screenHeight - appBarHeight,
                 width: screenWidth,
+                child: Center(
+                  child: CircularProgressIndicator(),
+                ),
               );
             }
           },
@@ -79,7 +93,7 @@ class _SambodhanState extends State<Sambodhan> {
         Positioned(
           left: 0,
           bottom: 0,
-          child: Container(
+          child: SizedBox(
             width: screenWidth,
             child: Padding(
               padding: const EdgeInsets.symmetric(

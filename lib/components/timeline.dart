@@ -9,8 +9,15 @@ class TimeLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      padding: EdgeInsets.all(32),
+      padding: EdgeInsets.fromLTRB(
+        (screenWidth < 500) ? 8 : 16,
+        32,
+        (screenWidth < 500) ? 8 : 16,
+        32,
+      ),
       color: Colors.grey.shade300,
       child: Column(
         children: [

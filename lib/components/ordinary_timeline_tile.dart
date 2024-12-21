@@ -15,7 +15,7 @@ class OrdinaryTimelineTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         crossAxisAlignment: (alignAtEnd ?? false)
             ? CrossAxisAlignment.end
@@ -24,9 +24,11 @@ class OrdinaryTimelineTile extends StatelessWidget {
           Text(
             eventTitle,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            textAlign: (alignAtEnd ?? false) ? TextAlign.right : TextAlign.left,
           ),
           Text(
             eventDescription,
+            textAlign: (alignAtEnd ?? false) ? TextAlign.right : TextAlign.left,
           ),
         ],
       ),

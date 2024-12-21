@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/components/connections.dart';
@@ -8,7 +6,6 @@ import 'package:my_website/components/intro_text.dart';
 import 'package:my_website/components/project_viewer.dart';
 import 'package:my_website/components/sambodhan.dart';
 import 'package:my_website/components/timeline.dart';
-import 'package:my_website/constants.dart';
 
 void main() {
   runApp(const Website());
