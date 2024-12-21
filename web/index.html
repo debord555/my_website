@@ -31,8 +31,24 @@
 
   <title>my_website</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    .container{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .container{
+      width: 50;
+    }
+  </style>
 </head>
-<body>
+<body style="overflow: hidden;">
+  <div id="loading_indicator" class="container">
+    <img class="indicator" src="Rhombus.gif" />
+  </div>
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
