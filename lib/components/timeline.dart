@@ -70,28 +70,8 @@ class TimeLine extends StatelessWidget {
                 }
               },
               itemCount: myTimelineStuff.length,
-              startConnectorBuilder: (context, index) => (index == 0)
-                  ? Connector.transparent()
-                  : Connector.solidLine(
-                      thickness: 5,
-                      color: Colors.deepPurple,
-                    ),
-              endConnectorBuilder: (context, index) =>
-                  (index == myTimelineStuff.length - 1)
-                      ? DecoratedLineConnector(
-                          thickness: 5,
-                          decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [Colors.deepPurple, Colors.transparent],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                            ),
-                          ),
-                        )
-                      : Connector.solidLine(
-                          thickness: 5,
-                          color: Colors.deepPurple,
-                        ),
+              startConnectorBuilder: getStartConnector,
+              endConnectorBuilder: getEndConnector,
               indicatorBuilder: (context, index) => ClipOval(
                 child: Container(
                   height: 40,
@@ -108,5 +88,63 @@ class TimeLine extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget getEndConnector(BuildContext context, int index) {
+    Color selfColor = myTimelineStuff[index]["color"] ?? Colors.deepPurple;
+
+    if (index == myTimelineStuff.length - 1) {
+      return DecoratedLineConnector(
+        thickness: 5,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [selfColor, Colors.transparent],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      );
+    }
+
+    Color nextColor = myTimelineStuff[index + 1]["color"] ?? Colors.deepPurple;
+    Color blend = Color.alphaBlend(
+      selfColor.withAlpha(127),
+      nextColor,
+    );
+
+    return DecoratedLineConnector(
+      thickness: 5,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [selfColor, blend],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+    );
+  }
+
+  Widget getStartConnector(BuildContext context, int index) {
+    if (index == 0) {
+      return Connector.transparent();
+    } else {
+      Color selfColor = myTimelineStuff[index]["color"] ?? Colors.deepPurple;
+      Color prevColor =
+          myTimelineStuff[index - 1]["color"] ?? Colors.deepPurple;
+      Color blend = Color.alphaBlend(
+        prevColor.withAlpha(127),
+        selfColor,
+      );
+      return DecoratedLineConnector(
+        thickness: 5,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [blend, selfColor],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      );
+    }
   }
 }

@@ -7,6 +7,8 @@ class IntroText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       color: Colors.grey.shade300,
       child: Center(
@@ -27,7 +29,9 @@ class IntroText extends StatelessWidget {
                 ),
                 Text(
                   introText,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(
+                    fontSize: (screenWidth < 500) ? 16 : 20,
+                  ),
                   textAlign: TextAlign.center,
                 ),
               ],

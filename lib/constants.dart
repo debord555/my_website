@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 final String introText =
-    "Hi there! I'm a Computer Science and Engineering student from Assam, India, with a deep passion for developing Flutter apps. Along with my love for mobile development, I am also very interested in the exciting field of Computer Graphics. \n\nI'm always eager to learn, grow, and explore new opportunities where I can apply my skills and knowledge. I'm currently looking for learning and work opportunities where I can contribute and further develop my expertise. Feel free to take a look at my CV — I would love to connect and collaborate!";
+    "Hi there! I'm a Computer Science and Engineering student from Assam, India, with a deep passion for developing Flutter apps. Along with my love for Flutter development, I am also very interested in the exciting field of Computer Graphics. \n\nI'm always eager to learn, grow, and explore new opportunities where I can apply my skills and knowledge. I'm currently looking for learning and work opportunities where I can contribute and further develop my expertise. Feel free to take a look at my CV — I would love to connect and collaborate!";
 
 final List<Map<String, dynamic>> projects = [
   {
@@ -60,7 +60,8 @@ final List<Map<String, dynamic>> myTimelineStuff = [
     "eventTitle": "Student at Tezpur University",
     "eventDescription":
         "Pursuing Bachelor of Technology in Computer Science & Engineering. Expected to graduate in 2026.",
-    "icon": Icons.school,
+    "icon": Icons.today,
+    "color": Colors.black,
   },
   {
     "date": "November 2024",
@@ -77,6 +78,7 @@ final List<Map<String, dynamic>> myTimelineStuff = [
     "eventDescription":
         "Completed Higher Secondary Education from Pragya Academy, Jorhat. Percentage scored: 94.2%",
     "icon": Icons.school,
+    "color": Colors.green,
   },
   {
     "date": "November 2021",
@@ -84,6 +86,7 @@ final List<Map<String, dynamic>> myTimelineStuff = [
     "eventDescription":
         "Was awarded the diploma of Associate of the Royal Schools of Music, by ABRSM, UK. ",
     "icon": Icons.school,
+    "color": Colors.green,
   },
   {
     "date": "June 2020",
@@ -91,6 +94,25 @@ final List<Map<String, dynamic>> myTimelineStuff = [
     "eventDescription":
         "Completed High School Education from Don Bosco H.S.S. Baghchung, Jorhat. Percentage scored: 95.2%",
     "icon": Icons.school,
+    "color": Colors.green,
+  },
+  {
+    "date": "February 2020",
+    "eventTitle": "Best Student Award",
+    "eventDescription":
+        "Awarded by Don Bosco H.S.S. Baghchung, Jorhat",
+    "icon": Icons.emoji_events,
+    "color": Colors.amberAccent,
+    "iconColor": Colors.black,
+  },
+  {
+    "date": "December 2017",
+    "eventTitle": "Best Overall Performance - Build-a-Thon",
+    "eventDescription":
+        "Build-a-Thon North Eastern Regional Level, organized by Robotech India Pvt. Ltd.",
+    "icon": Icons.emoji_events,
+    "color": Colors.amberAccent,
+    "iconColor": Colors.black,
   },
 ];
 
